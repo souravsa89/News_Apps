@@ -25,7 +25,7 @@ const NewsItem = (props) => {
           </p>
           <p className={newsitem.news_des}>{description}</p>
 
-          <a href={newsUrl} className={newsitem.news_btn} target="_blank">
+          <a href={newsUrl} className={newsitem.news_btn} >
             Read more
           </a>
         </div>
