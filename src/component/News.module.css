@@ -18,10 +18,11 @@ body {
   grid-gap: 1rem;
 }
 .cat_headline {
-  margin-top: 10px !important;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  margin-top: .5rem;
+  margin-left: 8.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  
 }
 .form {
   display: flex;
@@ -33,6 +34,9 @@ body {
   * {
     margin: 0;
     padding: 0;
+  }
+  .cat_headline {
+    margin-left: 14%;
   }
   .container {
     display: flex;

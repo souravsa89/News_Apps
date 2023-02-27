@@ -43,8 +43,11 @@ const News = (props) => {
     setLoading(false);
     props.setProgress(100);
   };
+
+ 
   useEffect(() => {
      updateNews();
+      // eslint-disable-next-line
   },[]);
 
   const fetchMoreData = async () => {
