@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
-import propTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import news from "./News.module.css";
 
@@ -45,18 +44,11 @@ const News = (props) => {
     props.setProgress(100);
   };
   useEffect(() => {
-    document.title = `${
-      props.category.charAt(0).toUpperCase() + props.category.slice(1)
-    }`;
-    updateNews();
+     updateNews();
   }, []);
 
   const fetchMoreData = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${
-      props.country
-    }&category=${props.category}&apiKey=${props.apiKey}&page=${
-      page + 1
-    }&pageSize=${props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`;
     setPage(page + 1);
     setLoading(true);
     let data = await fetch(url);
@@ -68,8 +60,7 @@ const News = (props) => {
   return (
     <div>
       <h1 className={news.cat_headline}>
-        Top {props.category.charAt(0).toUpperCase() + props.category.slice(1)}{" "}
-        Headlines
+        Top {props.category.charAt(0).toUpperCase() + props.category.slice(1)}{" "}Headlines
       </h1>
       <div className={news.form}>
         <form onSubmit={handleSubmit}>
@@ -91,7 +82,6 @@ const News = (props) => {
           />
         </form>
       </div>
-      {/* {this.state.loading && <Spinner />} */}
       <InfiniteScroll
         dataLength={articles.length}
         next={fetchMoreData}
